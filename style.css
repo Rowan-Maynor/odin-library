@@ -30,5 +30,9 @@
 }
 
 .book-read-toggle {
+    background-color: grey;
+}
+
+.book-remove {
     background-color: lightcoral;
 }
