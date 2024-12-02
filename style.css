@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: none;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.flex-container {
+    display: flex;
+}
+
+#main {
+    width: 1000px;
+    margin-inline: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px
+}
+
+.book-card {
+    flex-direction: column;
+}
+
+.book-section {
+    text-align: center;
+    margin: 0;
+    padding: 5px 10px;
+    border: solid 1px;
+}
