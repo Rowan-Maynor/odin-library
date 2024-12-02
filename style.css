@@ -28,3 +28,7 @@
     padding: 5px 10px;
     border: solid 1px;
 }
+
+.book-read-toggle {
+    background-color: lightcoral;
+}
