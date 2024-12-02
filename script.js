@@ -1,5 +1,5 @@
 const myLibrary = [];
-const main = document.getElementById("main");
+const content = document.getElementById("content");
 
 function Book(title, description) {
     this.title = title;
@@ -13,13 +13,9 @@ function addBookToLibrary(title, description) {
 }
 
 function createBookCard(id, title, description) {
-    //create bookCard div
     createBookDiv(id);
-    //create title p
-    //attach to div
-    createBookTitle(id, title)
-    //create description p
-    //attach to div
+    createBookTitle(id, title);
+    createBookDescription(id, description);
     //create has not read p
     //attach to div
     //add on click event for has not read p to toggle
@@ -32,13 +28,21 @@ function createBookDiv(id) {
     const newDiv = document.createElement("div");
     newDiv.classList = "flex-container book-card";
     newDiv.id = `${id}`
-    main.appendChild(newDiv);
+    content.appendChild(newDiv);
 }
 
 function createBookTitle(id, title) {
     const newP = document.createElement("p");
     newP.classList = "book-section book-title";
     newP.textContent = `${title}`;
+    const cardDiv = document.getElementById(`${id}`);
+    cardDiv.appendChild(newP);
+}
+
+function createBookDescription(id, description) {
+    const newP = document.createElement("p");
+    newP.classList = "book-section book-description";
+    newP.textContent = `${description}`;
     const cardDiv = document.getElementById(`${id}`);
     cardDiv.appendChild(newP);
 }
