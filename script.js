@@ -1,5 +1,6 @@
 const myLibrary = [];
 const content = document.getElementById("content");
+const bookForm = document.getElementById("submit-book-form");
 
 function Book(title, description) {
     this.title = title;
@@ -7,9 +8,10 @@ function Book(title, description) {
     hasRead: false;
 }
 
-function addBookToLibrary(title, description) {
+function addBookToLibrary(id, title, description) {
     const book = new Book(title, description);
     myLibrary.push(book);
+    createBookCard(id, title, description);
 }
 
 function createBookCard(id, title, description) {
@@ -73,4 +75,12 @@ function createRemoveBook(id) {
 
     const cardDiv = document.getElementById(`${id}`);
     cardDiv.appendChild(newP);
+}
+
+bookForm.onsubmit = function(event){
+    event.preventDefault();
+    const id = bookForm.bookTitle.value;
+    const title = bookForm.bookTitle.value;
+    const desc = bookForm.bookDesc.value;
+    addBookToLibrary(id, title, desc);
 }
