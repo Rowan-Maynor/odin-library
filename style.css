@@ -52,9 +52,10 @@
     align-items: center;
 }
 
-#submit-book-title-container, #submit-book-desc-container {
+#submit-book-title-container, #submit-book-desc-container, #submit-book-form {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 #submit-book-title {
