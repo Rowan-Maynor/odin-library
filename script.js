@@ -17,10 +17,7 @@ function createBookCard(id, title, description) {
     createBookTitle(id, title);
     createBookDescription(id, description);
     createHasReadToggle(id);
-    //add on click event for has not read p to toggle
-    //create remove book p
-    //attach to div
-    //add on click event for remove entire book div
+    createRemoveBook(id);
 }
 
 function createBookDiv(id) {
@@ -52,13 +49,26 @@ function createHasReadToggle(id) {
     newP.textContent = "Has Not Read";
 
     newP.addEventListener("click", function(){
-        if(this.classList=="book-section book-read-toggle-false"){
-            this.classList="book-section book-read-toggle-true";
-            this.textContent="Has Read"
+        if(this.classList == "book-section book-read-toggle-false"){
+            this.classList = "book-section book-read-toggle-true";
+            this.textContent = "Has Read";
         } else {
-            this.classList="book-section book-read-toggle-false";
-            this.textContent="Has Not Read"
+            this.classList = "book-section book-read-toggle-false";
+            this.textContent = "Has Not Read";
         }
+    });
+
+    const cardDiv = document.getElementById(`${id}`);
+    cardDiv.appendChild(newP);
+}
+
+function createRemoveBook(id) {
+    const newP = document.createElement("p");
+    newP.classList = "book-section book-remove";
+    newP.textContent = "Remove Book";
+
+    newP.addEventListener("click", function(){
+        this.parentElement.remove();
     });
 
     const cardDiv = document.getElementById(`${id}`);
