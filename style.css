@@ -29,10 +29,16 @@
     border: solid 1px;
 }
 
-.book-read-toggle {
+.book-read-toggle-false {
     background-color: grey;
+}
+
+.book-read-toggle-true {
+    background-color: lightgreen;
+    user-select: none;
 }
 
 .book-remove {
     background-color: lightcoral;
+    user-select: none;
 }
